@@ -32,8 +32,6 @@ use pocketmine\tile\Sign;
 
 use pocketmine\Player;
 
-use pocketmine\network\protocol\BlockEntityDataPacket;
-
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\nbt\tag\IntTag;
@@ -68,6 +66,15 @@ class System extends PluginBase implements Listener{
     }
     
     public function onDisable(){
+        if($this->who){
+           foreach($this->who as $name => $about){
+              $player = $this->getServer()->getPlayerExact($name);
+              if(!$player){
+                 continue;
+              }
+              $this->sendCustomSignShop($player, $about[0], false);
+           }
+        }
         $signs = new Config($this->getDataFolder() ."Signs.json", Config::JSON);
         $signs->setAll($this->sign);
         $signs->save();
@@ -544,7 +551,12 @@ class System extends PluginBase implements Listener{
         $nbt = new NBT(NBT::LITTLE_ENDIAN);
         $nbt->setData($compound);
         
-        $pk = new BlockEntityDataPacket();
+        if(class_exists('\pocketmine\network\protocol\BlockEntityDataPacket')){
+           $pk = new \pocketmine\network\protocol\BlockEntityDataPacket();
+        }else{
+           $pk = new \pocketmine\network\mcpe\protocol\BlockEntityDataPacket();
+        }
+        
         $pk->x = $tile->x;
         $pk->y = $tile->y;
         $pk->z = $tile->z;
