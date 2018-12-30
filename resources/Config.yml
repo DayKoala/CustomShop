@@ -1,0 +1,62 @@
+
+# %1 : Quantidade do item
+# %2 : Nome do item
+# %3 : Preço do item
+
+shop:
+- '§l§aCOMPRAR'
+- '§l§b> §r§7%3 %2(s) §l§b<'
+- '§7POR§8: §2$%1'
+- '§l§aCOMPRAR'
+
+sell:
+- '§l§cVENDER'
+- '§l§b> §r§7%3 %2(s) §l§b<'
+- '§7POR§8: §2$%1'
+- '§l§cVENDER'
+
+shopC:
+- '§l§aCOMPRAR E VENDER'
+- '§l§b> §r§7%3 %2(s) §l§b<'
+- '§7POR§8: §2$%1'
+- '§fToque agachado para venda'
+
+sellC:
+- '§l§cVENDER E COMPRAR'
+- '§l§b> §r§7%3 %2(s) §l§b<'
+- '§7POR§8: §2$%1'
+- '§fToque agachado para compra'
+
+double-tap: true
+
+no-item: '§cO item nesta placa não existe'
+
+# Normal
+no-money: '§cVocê precisa de %3/%2 para comprar %4'
+inventory-full: '§cNão pode ser adicionado %3 %4(s) em seu inventario'
+tap-again-to-buy: '§eToque novamente para comprar %3 %4(s) por $%5'
+buyed: '§aVocê comprou %3 %4(s) por $%5'
+
+no-amount: '§cVocê precisa ter pelo menos %3 %4(s) em seu inventario para vender'
+tap-again-to-sell-all: '§eToque novamente para vender %3 %4(s) por $%5'
+tap-again-to-sell: '§eToque novamente para vender %3 %4(s) por $%5'
+sold-all: '§aVocê vendeu %3 %4(s) por $%5'
+sold: '§aVocê vendeu %3 %4(s) por $%5'
+
+# Custom
+tap-again-to-change-s: '§eToque novamente agachado para mudar para venda'
+tap-again-to-change-b: '§eToque novamente agachado para mudar para compra'
+
+to-sell: '§aPlaca atualizada para venda'
+to-buy: '§aPlaca atualizada para compra'
+
+no-money-c: '§cVocê precisa de %3/%2 para comprar %4'
+inventory-full-c: '§cNão pode ser adicionado %3 %4(s) em seu inventario'
+tap-again-to-buy-c: '§eToque novamente para comprar %3 %4(s) por $%5'
+buyed-c: '§aVocê comprou %3 %4(s) por $%5'
+
+no-amount-c: '§cVocê precisa ter pelo menos %3 %4(s) em seu inventario para vender'
+tap-again-to-sell-all-c: '§eToque novamente para vender %3 %4(s) por $%5'
+tap-again-to-sell-c: '§eToque novamente para vender %3 %4(s) por $%5'
+sold-all-c: '§cVocê vendeu %3 %4(s) por $%5'
+sold-c: '§cVocê vendeu %3 %4(s) por $%5'
