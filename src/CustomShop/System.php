@@ -551,7 +551,7 @@ class System extends PluginBase implements Listener{
         $nbt = new NBT(NBT::LITTLE_ENDIAN);
         $nbt->setData($compound);
         
-        if(class_exists('\pocketmine\network\protocol\BlockEntityDataPacket')){
+        if(!version_compare(\pocketmine\API_VERSION, "3.0.0") >= 0){
            $pk = new \pocketmine\network\protocol\BlockEntityDataPacket();
         }else{
            $pk = new \pocketmine\network\mcpe\protocol\BlockEntityDataPacket();
